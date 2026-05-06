@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service — Idea Vault</title>
+    <link rel="icon" href="../../logo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #050505;
+            --surface: #111111;
+            --accent: #00F0FF;
+            --accent-dim: #007A82;
+            --text: #FFFFFF;
+            --text-dim: #A0A0A0;
+            --border: #222222;
+            --radius: 12px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html {
+            scroll-behavior: smooth;
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Space Grotesk', sans-serif;
+            line-height: 1.65;
+        }
+
+        body { overflow-x: hidden; }
+
+        .container {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 0 24px 80px;
+        }
+
+        header.page-head {
+            padding: 30px 0 40px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo-wrap {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--text);
+            margin-bottom: 32px;
+        }
+
+        .logo-img {
+            width: 44px;
+            height: 44px;
+            object-fit: contain;
+            border-radius: var(--radius);
+        }
+
+        .brand-name {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.25rem;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+        }
+
+        .app-label {
+            font-size: 11px;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(1.75rem, 5vw, 2.75rem);
+            font-weight: 800;
+            line-height: 1.15;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        h1 em {
+            font-style: italic;
+            color: var(--accent);
+        }
+
+        .meta {
+            font-size: 13px;
+            color: var(--text-dim);
+        }
+
+        .nav-legal {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding: 24px 0;
+        }
+
+        .nav-legal a {
+            font-size: 13px;
+            font-weight: 600;
+            padding: 8px 18px;
+            border-radius: 100px;
+            text-decoration: none;
+            transition: var(--transition);
+            border: 1px solid var(--border);
+            color: var(--text-dim);
+            background: var(--surface);
+        }
+
+        .nav-legal a:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .nav-legal a.active {
+            background: var(--accent);
+            color: var(--bg);
+            border-color: var(--accent);
+        }
+
+        .doc-intro {
+            background: rgba(0, 240, 255, 0.08);
+            border-left: 3px solid var(--accent);
+            padding: 20px 24px;
+            border-radius: 0 var(--radius) var(--radius) 0;
+            margin: 24px 0 32px;
+            font-size: 14px;
+            color: var(--text-dim);
+            line-height: 1.6;
+        }
+
+        h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin: 48px 0 16px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        h2:first-of-type {
+            margin-top: 16px;
+        }
+
+        p {
+            font-size: 15px;
+            color: var(--text-dim);
+            margin-bottom: 14px;
+        }
+
+        ul {
+            margin: 12px 0 16px;
+            padding-left: 22px;
+        }
+
+        ul li {
+            font-size: 15px;
+            color: var(--text-dim);
+            margin-bottom: 8px;
+        }
+
+        .contact-block {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px;
+            margin-top: 48px;
+        }
+
+        .contact-block h3 {
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .contact-block p {
+            font-size: 14px;
+            margin-bottom: 6px;
+        }
+
+        .contact-block a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .contact-block a:hover {
+            text-decoration: underline;
+        }
+
+        footer.site-foot {
+            text-align: center;
+            padding: 40px 24px;
+            font-size: 12px;
+            color: var(--text-dim);
+            border-top: 1px solid var(--border);
+            max-width: 780px;
+            margin: 0 auto;
+        }
+
+        footer.site-foot a {
+            color: var(--text-dim);
+            text-decoration: none;
+        }
+
+        footer.site-foot a:hover {
+            color: var(--accent);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header class="page-head">
+        <a href="../" class="logo-wrap">
+            <img src="../../logo.png" alt="Idea Vault Logo" class="logo-img">
+            <span class="brand-name">Idea Vault</span>
+        </a>
+        <div class="app-label">Pocket Micros · Idea Vault</div>
+        <h1>Terms of <em>Service</em></h1>
+        <p class="meta">Last updated: May 3, 2026 · Effective immediately</p>
+
+        <nav class="nav-legal" aria-label="Legal documents">
+            <a href="../privacy-policy/">Privacy Policy</a>
+            <a href="./" class="active" aria-current="page">Terms of Service</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="doc-intro">
+            These Terms govern your use of Idea Vault. Please read them carefully. By downloading or using the App, you agree to be bound by these Terms.
+        </div>
+
+        <h2>1. Acceptance of Terms</h2>
+        <p>By downloading, installing, or using Idea Vault ("the App"), you agree to these Terms of Service. If you do not agree, do not use the App.</p>
+
+        <h2>2. License</h2>
+        <p>Pocket Micros grants you a limited, non-exclusive, non-transferable, revocable license to use the App for your personal, non-commercial purposes. You may not copy, modify, distribute, sell, or reverse engineer any part of the App.</p>
+
+        <h2>3. Idea Vault Pro Subscription</h2>
+        <p>Idea Vault offers a Pro subscription that unlocks premium features. The following terms apply:</p>
+        <ul>
+            <li>Subscriptions are billed through your Apple App Store account</li>
+            <li>The yearly plan is billed annually at the stated price, with a 3-day free trial for new subscribers</li>
+            <li>The monthly plan is billed monthly at the stated price</li>
+            <li>Subscriptions automatically renew unless cancelled at least 24 hours before the end of the current period</li>
+            <li>You can manage and cancel your subscription at any time through your Apple ID account settings</li>
+            <li>No refunds are provided for partial subscription periods unless required by applicable law</li>
+        </ul>
+
+        <h2>4. Free Trial</h2>
+        <p>New subscribers to the yearly plan receive a 3-day free trial. You will not be charged during the trial period. If you do not cancel before the trial ends, your subscription will automatically begin and you will be charged the yearly price. Only one free trial is available per Apple ID.</p>
+
+        <h2>5. Your Content</h2>
+        <p>You retain full ownership of all ideas, notes, and content you create in the App. We do not claim any rights over your content. You are responsible for maintaining backups of your data.</p>
+
+        <h2>6. Acceptable Use</h2>
+        <p>You agree not to use the App for any unlawful purpose or in any way that could harm Pocket Micros or other users. You may not attempt to reverse engineer, decompile, or extract the source code of the App.</p>
+
+        <h2>7. AI Features</h2>
+        <p>AI features are provided as a convenience tool. The App makes no guarantees about the accuracy, quality, or completeness of AI-generated output. You are responsible for reviewing and verifying any AI-generated content before relying on it.</p>
+
+        <h2>8. Disclaimer of Warranties</h2>
+        <p>The App is provided "as is" without warranties of any kind, either express or implied. Pocket Micros does not warrant that the App will be error-free, uninterrupted, or free of harmful components.</p>
+
+        <h2>9. Limitation of Liability</h2>
+        <p>To the maximum extent permitted by law, Pocket Micros shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of the App, including any loss of data.</p>
+
+        <h2>10. Changes to Terms</h2>
+        <p>We reserve the right to update these Terms at any time. We will update the "Last updated" date at the top of this page. Continued use of the App after changes constitutes your acceptance of the updated Terms.</p>
+
+        <h2>11. Governing Law</h2>
+        <p>These Terms are governed by the laws of Pakistan. Any disputes shall be resolved under Pakistani jurisdiction.</p>
+
+        <div class="contact-block">
+            <h3>Questions about these Terms?</h3>
+            <p>We're happy to clarify anything.</p>
+            <p>Email: <a href="mailto:support@pocketmicros.com">support@pocketmicros.com</a></p>
+            <p>Website: <a href="https://pocketmicros.com" target="_blank" rel="noopener noreferrer">pocketmicros.com</a></p>
+        </div>
+    </main>
+</div>
+
+<footer class="site-foot">
+    © 2026 Pocket Micros · <a href="../">Idea Vault</a> · All rights reserved
+</footer>
+
+</body>
+</html>
