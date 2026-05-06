@@ -157,6 +157,37 @@
             transform: translateY(-2px);
         }
 
+        .card-cta {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1.25rem;
+        }
+
+        .card-store-btns {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            align-items: center;
+        }
+
+        .card-website-link {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--fg);
+            text-decoration: underline;
+            text-underline-offset: 0.25em;
+        }
+
+        .card-website-link:hover {
+            color: var(--accent);
+        }
+
+        .card-website-link--pending {
+            opacity: 0;
+            pointer-events: none;
+        }
+
         /* About & Contact */
         .split-section {
             display: grid;
@@ -254,9 +285,15 @@
                     <div>
                         <span class="card-meta">Social • iOS & Android</span>
                         <h3>Pocket Kitty</h3>
-                        <p>A minimalist community for pet lovers. No algorithms, no clutter—just photos of cats and dogs shared by people who love them.</p>
+                        <p>A social community for pet lovers to share photos, post updates, and connect with people who love their pets as much as you do.</p>
                     </div>
-                    <a href="https://thepocketkitty.com" target="_blank" class="btn">View Project</a>
+                    <div class="card-cta">
+                        <div class="card-store-btns">
+                            <a href="https://apps.apple.com/us/app/pocket-kitty-pets-community/id6760416862" target="_blank" rel="noopener noreferrer" class="btn">App Store</a>
+                            <a href="https://play.google.com/store/apps/details?id=com.thepocketkitty.app" target="_blank" rel="noopener noreferrer" class="btn">Play Store</a>
+                        </div>
+                        <a href="https://thepocketkitty.com" target="_blank" rel="noopener noreferrer" class="card-website-link">view website</a>
+                    </div>
                 </article>
 
                 <!-- Idea Vault Card -->
@@ -264,9 +301,14 @@
                     <div>
                         <span class="card-meta">Productivity • iOS • AI Powered</span>
                         <h3>Idea Vault</h3>
-                        <p>The anti-distraction notebook. Capture fleeting thoughts in Markdown and use integrated AI to structure, expand, and refine your logic.</p>
+                        <p>A notebook app for capturing your random ideas and using AI to organize and develop them into something real.</p>
                     </div>
-                    <a href="#" class="btn">App Store</a>
+                    <div class="card-cta">
+                        <div class="card-store-btns">
+                            <a href="#" class="btn">Coming soon</a>
+                        </div>
+                        <a href="#" class="card-website-link card-website-link--pending">view website</a>
+                    </div>
                 </article>
             </div>
         </section>
@@ -285,7 +327,7 @@
     </main>
 
     <footer class="container">
-        &copy; Pocket Micros 2026. Made in Pakistan.
+        &copy; Pocket Micros 2026.
     </footer>
 
     <script>
