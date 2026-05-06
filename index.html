@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pocket Micros | Small Apps, Big Impact</title>
+    <!-- Google Fonts: Space Grotesk for that sharp, modern, technical feel -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Bold, high-contrast light theme palette */
+            --bg: #ffffff;
+            --fg: #000000;
+            --accent: #ff3e00; /* Energetic International Orange */
+            --border-width: 2px;
+            --transition: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: var(--bg);
+            color: var(--fg);
+            line-height: 1.4;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        /* Layout Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Navigation */
+        nav {
+            padding: 2rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: var(--border-width) solid var(--fg);
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            letter-spacing: -0.05rem;
+            text-transform: uppercase;
+        }
+
+        /* Hero Section */
+        header {
+            padding: 22vh 0 10vh;
+        }
+
+        .hero-tagline {
+            font-size: clamp(3rem, 10vw, 8rem);
+            font-weight: 700;
+            line-height: 0.9;
+            letter-spacing: -0.04em;
+            text-transform: uppercase;
+            margin-top: clamp(1.5rem, 5vh, 4rem);
+            margin-bottom: 2rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            max-width: 600px;
+            font-weight: 300;
+            border-left: var(--border-width) solid var(--accent);
+            padding-left: 1.5rem;
+        }
+
+        /* Products Grid */
+        #products {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            margin-bottom: 3rem;
+            display: block;
+            font-weight: 700;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--border-width);
+            background-color: var(--fg); /* Creates the border effect between cards */
+            border: var(--border-width) solid var(--fg);
+        }
+
+        .card {
+            background: var(--bg);
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            background: #f4f4f4;
+        }
+
+        .card h3 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .card p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+        }
+
+        .card-meta {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            border: var(--border-width) solid var(--fg);
+            text-decoration: none;
+            color: var(--fg);
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: var(--transition);
+            width: fit-content;
+        }
+
+        .btn:hover {
+            background: var(--fg);
+            color: var(--bg);
+            transform: translateY(-2px);
+        }
+
+        /* About & Contact */
+        .split-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            border-bottom: var(--border-width) solid var(--fg);
+        }
+
+        .split-content {
+            padding: 5rem 3rem;
+            border-right: var(--border-width) solid var(--fg);
+        }
+
+        .split-content:last-child {
+            border-right: none;
+        }
+
+        .split-content h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        .support-link {
+            font-size: 2rem;
+            color: var(--fg);
+            text-decoration: underline;
+            font-weight: 700;
+            word-break: break-all;
+        }
+
+        .support-link:hover {
+            color: var(--accent);
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 0;
+            text-align: center;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 900px) {
+            .grid, .split-section {
+                grid-template-columns: 1fr;
+            }
+            .split-content {
+                border-right: none;
+                border-bottom: var(--border-width) solid var(--fg);
+            }
+            .hero-tagline {
+                font-size: 4rem;
+            }
+            .card {
+                padding: 2rem;
+            }
+            .split-content {
+                padding: 3rem 2rem;
+            }
+        }
+
+        /* Animation Trigger */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="container">
+        <div class="logo">Pocket Micros</div>
+        <div>2026 Studio</div>
+    </nav>
+
+    <header class="container">
+        <h1 class="hero-tagline">Build.<br>Focus.<br>Repeat.</h1>
+        <p class="hero-subtitle">Independent software lab based in Pakistan. We're lean—zero bloat. Crafting mobile tools that solve problems and communities that connect.</p>
+    </header>
+
+    <main>
+        <section id="products" class="container">
+            <span class="section-title">Current Release / Studio Projects</span>
+            <div class="grid">
+                <!-- Pocket Kitty Card -->
+                <article class="card reveal">
+                    <div>
+                        <span class="card-meta">Social • iOS & Android</span>
+                        <h3>Pocket Kitty</h3>
+                        <p>A minimalist community for pet lovers. No algorithms, no clutter—just photos of cats and dogs shared by people who love them.</p>
+                    </div>
+                    <a href="https://thepocketkitty.com" target="_blank" class="btn">View Project</a>
+                </article>
+
+                <!-- Idea Vault Card -->
+                <article class="card reveal">
+                    <div>
+                        <span class="card-meta">Productivity • iOS • AI Powered</span>
+                        <h3>Idea Vault</h3>
+                        <p>The anti-distraction notebook. Capture fleeting thoughts in Markdown and use integrated AI to structure, expand, and refine your logic.</p>
+                    </div>
+                    <a href="#" class="btn">App Store</a>
+                </article>
+            </div>
+        </section>
+
+        <section class="container split-section">
+            <div class="split-content reveal">
+                <h2>The Studio</h2>
+                <p>Pocket Micros is a lean studio. We don't build for investors; we build for users. Every pixel and line of code is handled in-house with a focus on speed, utility, and clean aesthetics.</p>
+            </div>
+            <div id="contact" class="split-content reveal">
+                <h2>Support</h2>
+                <p>Need help with an app or want to discuss a project?</p>
+                <a href="mailto:support@pocketmicros.com" class="support-link">support@pocketmicros.com</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="container">
+        &copy; Pocket Micros 2026. Made in Pakistan.
+    </footer>
+
+    <script>
+        // Simple Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach((el) => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
