@@ -1,29 +1,21 @@
-<!--
-  File: index.html
-  Project: Pocket Micros Studio Homepage
-  Aesthetic: Modern, Sharp, High-Contrast Light Theme
--->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pocket Micros | Small Apps, Big Impact</title>
-    
-    <!-- Google Fonts: Space Grotesk (Bold/Modern) & Outfit (Clean/Readable) -->
+    <!-- Google Fonts: Space Grotesk for that sharp, modern, technical feel -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #FFFFFF;
-            --text: #000000;
-            --accent: #2563EB; /* Sharp Blue */
-            --border: #000000;
-            --shadow: 8px 8px 0px #000000;
-            --card-bg: #F8FAFC;
-            --transition: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+            /* Bold, high-contrast light theme palette */
+            --bg: #ffffff;
+            --fg: #000000;
+            --accent: #ff3e00; /* Energetic International Orange */
+            --border-width: 2px;
+            --transition: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         * {
@@ -37,91 +29,85 @@
         }
 
         body {
-            font-family: 'Outfit', sans-serif;
+            font-family: 'Space Grotesk', sans-serif;
             background-color: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
+            color: var(--fg);
+            line-height: 1.4;
+            -webkit-font-smoothing: antialiased;
             overflow-x: hidden;
         }
 
-        h1, h2, h3, .brand {
-            font-family: 'Space Grotesk', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: -1px;
-        }
-
+        /* Layout Container */
         .container {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem;
         }
 
-        /* --- Navigation --- */
+        /* Navigation */
         nav {
             padding: 2rem 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            border-bottom: var(--border-width) solid var(--fg);
         }
 
-        .brand {
-            font-size: 1.5rem;
+        .logo {
             font-weight: 700;
+            font-size: 1.5rem;
+            letter-spacing: -0.05rem;
+            text-transform: uppercase;
         }
 
-        .studio-tag {
-            font-weight: 600;
-            font-size: 0.9rem;
-            opacity: 0.6;
-        }
-
-        /* --- Hero --- */
+        /* Hero Section */
         header {
-            padding: 8rem 0 6rem;
-            border-bottom: 4px solid var(--border);
+            padding: 22vh 0 10vh;
         }
 
-        h1 {
-            font-size: clamp(3rem, 10vw, 6rem);
-            line-height: 0.85;
+        .hero-tagline {
+            font-size: clamp(3rem, 10vw, 8rem);
+            font-weight: 700;
+            line-height: 0.9;
+            letter-spacing: -0.04em;
+            text-transform: uppercase;
+            margin-top: clamp(1.5rem, 5vh, 4rem);
             margin-bottom: 2rem;
         }
 
         .hero-subtitle {
-            font-size: clamp(1.2rem, 3vw, 1.5rem);
-            font-weight: 400;
-            max-width: 650px;
+            font-size: 1.5rem;
+            max-width: 600px;
+            font-weight: 300;
+            border-left: var(--border-width) solid var(--accent);
             padding-left: 1.5rem;
-            border-left: 4px solid var(--accent);
         }
 
-        /* --- Grid Section --- */
+        /* Products Grid */
         #products {
-            padding: 6rem 0;
+            padding: 5rem 0;
         }
 
-        .section-label {
-            display: block;
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 700;
+        .section-title {
+            font-size: 0.9rem;
             text-transform: uppercase;
-            font-size: 0.8rem;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.2em;
             margin-bottom: 3rem;
-            color: var(--accent);
+            display: block;
+            font-weight: 700;
         }
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 3rem;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--border-width);
+            background-color: var(--fg); /* Creates the border effect between cards */
+            border: var(--border-width) solid var(--fg);
         }
 
         .card {
             background: var(--bg);
-            border: 3px solid var(--border);
-            padding: 2.5rem;
-            box-shadow: var(--shadow);
+            padding: 3rem;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -129,128 +115,149 @@
         }
 
         .card:hover {
-            transform: translate(-4px, -4px);
-            box-shadow: 12px 12px 0px var(--border);
-        }
-
-        .card-meta {
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-            display: block;
-            opacity: 0.5;
+            background: #f4f4f4;
         }
 
         .card h3 {
-            font-size: 2rem;
+            font-size: 2.5rem;
+            font-weight: 700;
             margin-bottom: 1rem;
+            text-transform: uppercase;
         }
 
         .card p {
+            font-size: 1.1rem;
             margin-bottom: 2rem;
-            color: #444;
+            opacity: 0.8;
         }
 
-        /* --- Buttons --- */
-        .btn-group {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 1.5rem;
+        .card-meta {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
         }
 
         .btn {
             display: inline-block;
-            background: var(--text);
-            color: var(--bg);
-            padding: 0.8rem 1.5rem;
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 700;
+            padding: 1rem 2rem;
+            border: var(--border-width) solid var(--fg);
             text-decoration: none;
-            font-size: 0.9rem;
-            border: 2px solid var(--border);
+            color: var(--fg);
+            font-weight: 700;
+            text-transform: uppercase;
             transition: var(--transition);
+            width: fit-content;
         }
 
         .btn:hover {
-            background: var(--accent);
-            border-color: var(--accent);
+            background: var(--fg);
+            color: var(--bg);
+            transform: translateY(-2px);
         }
 
-        .link-secondary {
+        .card-cta {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1.25rem;
+        }
+
+        .card-store-btns {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            align-items: center;
+        }
+
+        .card-website-link {
+            font-size: 0.95rem;
             font-weight: 700;
-            text-transform: uppercase;
-            font-size: 0.8rem;
-            color: var(--text);
-            text-decoration: none;
-            border-bottom: 2px solid var(--accent);
+            color: var(--fg);
+            text-decoration: underline;
+            text-underline-offset: 0.25em;
         }
 
-        /* --- Split Section --- */
+        .card-website-link:hover {
+            color: var(--accent);
+        }
+
+        .card-website-link--pending {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        /* About & Contact */
         .split-section {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            border-top: 4px solid var(--border);
+            border-bottom: var(--border-width) solid var(--fg);
         }
 
         .split-content {
             padding: 5rem 3rem;
-            border-right: 4px solid var(--border);
+            border-right: var(--border-width) solid var(--fg);
         }
 
         .split-content:last-child {
             border-right: none;
-            background: var(--card-bg);
         }
 
         .split-content h2 {
-            font-size: 2.5rem;
+            font-size: 2rem;
             margin-bottom: 1.5rem;
+            text-transform: uppercase;
         }
 
         .support-link {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(1.2rem, 3vw, 2rem);
-            color: var(--text);
-            text-decoration: none;
+            font-size: 2rem;
+            color: var(--fg);
+            text-decoration: underline;
             font-weight: 700;
             word-break: break-all;
-            border-bottom: 4px solid var(--accent);
         }
 
-        /* --- Footer --- */
+        .support-link:hover {
+            color: var(--accent);
+        }
+
+        /* Footer */
         footer {
-            padding: 4rem 0;
+            padding: 3rem 0;
             text-align: center;
-            background: var(--text);
-            color: var(--bg);
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 700;
+            font-size: 0.9rem;
             text-transform: uppercase;
-            font-size: 0.8rem;
-            letter-spacing: 0.1em;
+            font-weight: 500;
         }
 
-        /* --- Responsive --- */
-        @media (max-width: 800px) {
-            .split-section {
+        /* Responsive adjustments */
+        @media (max-width: 900px) {
+            .grid, .split-section {
                 grid-template-columns: 1fr;
             }
             .split-content {
                 border-right: none;
-                border-bottom: 4px solid var(--border);
-                padding: 3rem 1.5rem;
+                border-bottom: var(--border-width) solid var(--fg);
             }
-            h1 { font-size: 3.5rem; }
+            .hero-tagline {
+                font-size: 4rem;
+            }
+            .card {
+                padding: 2rem;
+            }
+            .split-content {
+                padding: 3rem 2rem;
+            }
         }
 
-        /* Scroll Animation */
+        /* Animation Trigger */
         .reveal {
             opacity: 0;
-            transform: translateY(20px);
-            transition: 0.6s ease-out;
+            transform: translateY(30px);
+            transition: 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
+
         .reveal.active {
             opacity: 1;
             transform: translateY(0);
@@ -260,79 +267,86 @@
 <body>
 
     <nav class="container">
-        <div class="brand">Pocket Micros</div>
-        <div class="studio-tag">2026 STUDIO</div>
+        <div class="logo">Pocket Micros</div>
+        <div>2026 Studio</div>
     </nav>
 
     <header class="container">
-        <h1>Build.<br>Focus.<br>Repeat.</h1>
-        <p class="hero-subtitle">Independent software lab based in Pakistan. No bloat, no investors—just high-utility tools for messy thinkers and pet lovers.</p>
+        <h1 class="hero-tagline">Build.<br>Focus.<br>Repeat.</h1>
+        <p class="hero-subtitle">Independent software lab based in Pakistan. We're lean—zero bloat. Crafting mobile tools that solve problems and communities that connect.</p>
     </header>
 
     <main>
         <section id="products" class="container">
-            <span class="section-label">Current Release / Studio Projects</span>
+            <span class="section-title">Current Release / Studio Projects</span>
             <div class="grid">
-                <!-- Pocket Kitty -->
+                <!-- Pocket Kitty Card -->
                 <article class="card reveal">
                     <div>
                         <span class="card-meta">Social • iOS & Android</span>
                         <h3>Pocket Kitty</h3>
-                        <p>A social community for pet lovers to share photos, post updates, and connect with a local network of enthusiasts.</p>
+                        <p>A social community for pet lovers to share photos, post updates, and connect with people who love their pets as much as you do.</p>
                     </div>
-                    <div>
-                        <div class="btn-group">
-                            <a href="https://apps.apple.com/us/app/pocket-kitty-pets-community/id6760416862" class="btn">App Store</a>
-                            <a href="https://play.google.com/store/apps/details?id=com.thepocketkitty.app" class="btn">Play Store</a>
+                    <div class="card-cta">
+                        <div class="card-store-btns">
+                            <a href="https://apps.apple.com/us/app/pocket-kitty-pets-community/id6760416862" target="_blank" rel="noopener noreferrer" class="btn">App Store</a>
+                            <a href="https://play.google.com/store/apps/details?id=com.thepocketkitty.app" target="_blank" rel="noopener noreferrer" class="btn">Play Store</a>
                         </div>
-                        <a href="https://thepocketkitty.com" class="link-secondary">View Website</a>
+                        <a href="https://thepocketkitty.com" target="_blank" rel="noopener noreferrer" class="card-website-link">view website</a>
                     </div>
                 </article>
 
-                <!-- Idea Vault -->
+                <!-- Idea Vault Card -->
                 <article class="card reveal">
                     <div>
-                        <span class="card-meta">Productivity • iOS • AI</span>
+                        <span class="card-meta">Productivity • iOS • AI Powered</span>
                         <h3>Idea Vault</h3>
-                        <p>A smart notebook that uses AI to restructure your chaotic thoughts into refined, project-ready content.</p>
+                        <p>A notebook app for capturing your random ideas and using AI to organize and develop them into something real.</p>
                     </div>
-                    <div>
-                        <div class="btn-group">
-                            <a href="https://apps.apple.com/app/idea-vault" class="btn">Get it on iOS</a>
+                    <div class="card-cta">
+                        <div class="card-store-btns">
+                            <a href="#" class="btn">Coming soon</a>
                         </div>
-                        <a href="ideavault/index.html" class="link-secondary">View Product Page</a>
+                        <a href="ideavault/index.html" class="card-website-link">view website</a>
                     </div>
                 </article>
             </div>
         </section>
 
-        <section class="split-section">
+        <section class="container split-section">
             <div class="split-content reveal">
                 <h2>The Studio</h2>
-                <p>Pocket Micros is a lean operation. We believe in speed, utility, and sharp aesthetics. Every line of code is written to solve a specific problem, keeping the user experience at the center of the vault.</p>
+                <p>Pocket Micros is a lean studio. We don't build for investors; we build for users. Every pixel and line of code is handled in-house with a focus on speed, utility, and clean aesthetics.</p>
             </div>
-            <div class="split-content reveal">
+            <div id="contact" class="split-content reveal">
                 <h2>Support</h2>
-                <p style="margin-bottom: 2rem;">Need help with an app or want to discuss a project?</p>
+                <p>Need help with an app or want to discuss a project?</p>
                 <a href="mailto:support@pocketmicros.com" class="support-link">support@pocketmicros.com</a>
             </div>
         </section>
     </main>
 
-    <footer>
-        <div class="container">
-            &copy; 2026 Pocket Micros. All Rights Reserved.
-        </div>
+    <footer class="container">
+        &copy; Pocket Micros 2026.
     </footer>
 
     <script>
+        // Simple Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('active');
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
             });
-        }, { threshold: 0.1 });
+        }, observerOptions);
 
-        document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+        document.querySelectorAll('.reveal').forEach((el) => {
+            observer.observe(el);
+        });
     </script>
 </body>
 </html>
