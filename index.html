@@ -236,8 +236,16 @@
             .grid, .split-section {
                 grid-template-columns: 1fr;
             }
+            /* Edge-to-edge dividers; keep text aligned with other .container sections */
+            section.split-section.container {
+                padding-left: 0;
+                padding-right: 0;
+            }
             .split-content {
                 border-right: none;
+                padding: 3rem 2rem;
+            }
+            .split-content:not(:last-child) {
                 border-bottom: var(--border-width) solid var(--fg);
             }
             .hero-tagline {
@@ -245,9 +253,6 @@
             }
             .card {
                 padding: 2rem;
-            }
-            .split-content {
-                padding: 3rem 2rem;
             }
         }
 
@@ -307,7 +312,7 @@
                         <div class="card-store-btns">
                             <a href="#" class="btn">Coming soon</a>
                         </div>
-                        <a href="ideavault/index.html" class="card-website-link">view website</a>
+                        <a href="https://ideavault.pocketmicros.com/" target="_blank" rel="noopener noreferrer" class="card-website-link">view website</a>
                     </div>
                 </article>
             </div>
