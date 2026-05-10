@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pocket Micros | Small Apps, Big Impact</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="apple-touch-icon" href="logo.png">
     <!-- Google Fonts: Space Grotesk for that sharp, modern, technical feel -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -54,10 +57,28 @@
         }
 
         .logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.65rem;
             font-weight: 700;
             font-size: 1.5rem;
             letter-spacing: -0.05rem;
             text-transform: uppercase;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .logo-img {
+            height: 1rem;
+            width: auto;
+            border-radius: 22%;
+            display: block;
+            object-fit: contain;
+        }
+
+        .logo:focus-visible {
+            outline: var(--border-width) solid var(--accent);
+            outline-offset: 4px;
         }
 
         .nav-cluster {
@@ -346,7 +367,10 @@
 <body>
 
     <nav class="container">
-        <div class="logo">Pocket Micros</div>
+        <a href="./" class="logo">
+            <img src="logo.png" alt="" class="logo-img" decoding="async">
+            <span>Pocket Micros</span>
+        </a>
         <div class="nav-cluster">
             <a href="https://www.patreon.com/posts/one-developer-no-157857073" target="_blank" rel="noopener noreferrer" class="patreon-btn">Patreon</a>
             <span class="nav-divider" aria-hidden="true">·</span>
