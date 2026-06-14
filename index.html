@@ -159,31 +159,6 @@
             border: var(--border-width) solid var(--fg);
         }
 
-        /* Bottom row as one spanning cell so Mockup + white space share no internal grid gutters */
-        .grid-row-span {
-            grid-column: 1 / -1;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0;
-            min-width: 0;
-            background-color: var(--bg);
-        }
-
-        /* Match other row dividers — separates Mockup Studio from extended white cell */
-        .grid-row-span > .card {
-            border-right: var(--border-width) solid var(--fg);
-        }
-
-        /* Pull over the outer .grid border on the filler side only (bottom-right) */
-        .grid-filler {
-            background-color: var(--bg);
-            min-height: 100%;
-            margin-right: calc(-1 * var(--border-width));
-            margin-bottom: calc(-1 * var(--border-width));
-            position: relative;
-            z-index: 1;
-        }
-
         .card {
             background: var(--bg);
             padding: 3rem;
@@ -324,16 +299,6 @@
             .grid, .split-section {
                 grid-template-columns: 1fr;
             }
-            .grid-row-span {
-                grid-column: auto;
-                grid-template-columns: 1fr;
-            }
-            .grid-filler {
-                display: none;
-            }
-            .grid-row-span > .card {
-                border-right: none;
-            }
             /* Edge-to-edge dividers; keep text aligned with other .container sections */
             section.split-section.container {
                 padding-left: 0;
@@ -421,8 +386,7 @@
                     </div>
                 </article>
 
-                <!-- Bottom row: no internal borders between Mockup Studio and extended white area -->
-                <div class="grid-row-span">
+                <!-- Mockup Studio Card -->
                 <article class="card reveal">
                     <div>
                         <span class="card-meta">Design • Web • Free</span>
@@ -435,8 +399,20 @@
                         </div>
                     </div>
                 </article>
-                <div class="grid-filler" aria-hidden="true"></div>
-                </div>
+
+                <!-- Mini API Card -->
+                <article class="card reveal">
+                    <div>
+                        <span class="card-meta">Developer Tools • Web • Free</span>
+                        <h3>Mini API</h3>
+                        <p>A Postman-like tool for testing HTTP requests directly in the browser.</p>
+                    </div>
+                    <div class="card-cta">
+                        <div class="card-store-btns">
+                            <a href="https://miniapi.pocketmicros.com/" target="_blank" rel="noopener noreferrer" class="btn">Open app</a>
+                        </div>
+                    </div>
+                </article>
             </div>
         </section>
 
