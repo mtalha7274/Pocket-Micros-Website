@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pocket Micros | Small Apps, Big Impact</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="icon" type="image/png" href="logo.png">
-    <link rel="apple-touch-icon" href="logo.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
     <!-- Google Fonts: Space Grotesk for that sharp, modern, technical feel -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -69,7 +69,7 @@
         }
 
         .logo-img {
-            height: 1rem;
+            height: 1em;
             width: auto;
             border-radius: 22%;
             display: block;
@@ -172,6 +172,12 @@
             background: #f4f4f4;
         }
 
+        .grid-spacer {
+            background: var(--bg);
+            margin-right: calc(-1 * var(--border-width));
+            margin-bottom: calc(-1 * var(--border-width));
+        }
+
         .card h3 {
             font-size: 2.5rem;
             font-weight: 700;
@@ -240,6 +246,57 @@
         .card-website-link--pending {
             opacity: 0;
             pointer-events: none;
+        }
+
+        /* Open Source */
+        #open-source {
+            padding: 5rem 0;
+        }
+
+        #open-source h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        #open-source .section-subtitle {
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            opacity: 0.8;
+            max-width: 600px;
+        }
+
+        #open-source .card {
+            min-width: 0;
+        }
+
+        #open-source .card h3 {
+            font-size: clamp(1.25rem, 4.5vw, 2rem);
+            text-transform: none;
+            overflow-wrap: anywhere;
+            word-break: break-word;
+            line-height: 1.15;
+        }
+
+        #open-source .card h3 a {
+            display: block;
+            max-width: 100%;
+            color: inherit;
+            text-decoration: none;
+        }
+
+        #open-source .card h3 a:hover {
+            color: var(--accent);
+        }
+
+        .card-stat {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            border: var(--border-width) solid var(--fg);
+            padding: 0.25rem 0.5rem;
+            margin-bottom: 1rem;
         }
 
         /* About & Contact */
@@ -316,6 +373,9 @@
             }
             .card {
                 padding: 2rem;
+            }
+            .grid-spacer {
+                display: none;
             }
         }
 
@@ -400,6 +460,20 @@
                     </div>
                 </article>
 
+                <!-- BlockLang Card -->
+                <article class="card reveal">
+                    <div>
+                        <span class="card-meta">Education • Web • Free</span>
+                        <h3>BlockLang</h3>
+                        <p>Visual block editor for learning real TypeScript, typed puzzle blocks compile to code and run step-by-step.</p>
+                    </div>
+                    <div class="card-cta">
+                        <div class="card-store-btns">
+                            <a href="https://blocklang.pocketmicros.com/" target="_blank" rel="noopener noreferrer" class="btn">Open app</a>
+                        </div>
+                    </div>
+                </article>
+
                 <!-- Mini API Card -->
                 <article class="card reveal">
                     <div>
@@ -413,6 +487,57 @@
                         </div>
                     </div>
                 </article>
+
+                <div class="grid-spacer" aria-hidden="true"></div>
+            </div>
+        </section>
+
+        <section id="open-source" class="container">
+            <h2 class="reveal">Open Source</h2>
+            <p class="section-subtitle reveal">Flutter packages published on pub.dev, used by developers worldwide.</p>
+            <div class="grid">
+                <article class="card reveal">
+                    <div>
+                        <span class="card-meta">Flutter • Open Source • pub.dev</span>
+                        <span class="card-stat">31 likes</span>
+                        <h3><a href="https://pub.dev/packages/mention_tag_text_field" target="_blank" rel="noopener noreferrer">mention_tag_text_field</a></h3>
+                        <p>Adds @mention and #tag functionality to any Flutter TextField or TextFormField. Supports multiple triggers, custom tag styles, data binding, and automatic mention removal.</p>
+                    </div>
+                </article>
+
+                <article class="card reveal">
+                    <div>
+                        <span class="card-meta">Flutter • Open Source • pub.dev</span>
+                        <h3><a href="https://pub.dev/packages/flutter_ruler_slider" target="_blank" rel="noopener noreferrer">flutter_ruler_slider</a></h3>
+                        <p>A customizable horizontal ruler slider with snapping, configurable labels, and tick mark styling.</p>
+                    </div>
+                </article>
+
+                <article class="card reveal">
+                    <div>
+                        <span class="card-meta">Flutter • Open Source • pub.dev</span>
+                        <h3><a href="https://pub.dev/packages/api_repo" target="_blank" rel="noopener noreferrer">api_repo</a></h3>
+                        <p>A pluggable API caching layer for Flutter with configurable cache policies to reduce redundant network requests.</p>
+                    </div>
+                </article>
+
+                <article class="card reveal">
+                    <div>
+                        <span class="card-meta">Flutter • Open Source • pub.dev</span>
+                        <h3><a href="https://pub.dev/packages/cached_future_builder_plus" target="_blank" rel="noopener noreferrer">cached_future_builder_plus</a></h3>
+                        <p>Extends Flutter's FutureBuilder with intelligent caching so async results are preserved across widget rebuilds.</p>
+                    </div>
+                </article>
+
+                <article class="card reveal">
+                    <div>
+                        <span class="card-meta">Flutter • Open Source • pub.dev</span>
+                        <h3><a href="https://pub.dev/packages/flutter_poster_toolkit" target="_blank" rel="noopener noreferrer">flutter_poster_toolkit</a></h3>
+                        <p>A Flutter package for generating posters and flyers directly inside mobile apps with customizable layouts.</p>
+                    </div>
+                </article>
+
+                <div class="grid-spacer" aria-hidden="true"></div>
             </div>
         </section>
 
